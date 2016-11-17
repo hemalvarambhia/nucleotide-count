@@ -9,7 +9,6 @@ class NucleotideTest < Minitest::Test
   end
 
   def test_repetitive_cytidine_gets_counted
-    skip
     assert_equal 5, Nucleotide.from_dna('CCCCC').count('C')
   end
 
