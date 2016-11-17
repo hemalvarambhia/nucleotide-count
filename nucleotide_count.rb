@@ -7,6 +7,8 @@ class Nucleotide
     include Enumerable
   
     def initialize sequence_string
+      raise ArgumentError if sequence_string[/[^ACGT]/]
+
       @sequence = sequence_string.split ''
     end
 
