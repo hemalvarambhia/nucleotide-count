@@ -1,6 +1,9 @@
 class Array
   def histogram
-    { 'A' => 0, 'C' => 0, 'G' => count('G'), 'T' => 0 }
+    { 
+      'A' => count('A'), 'C' => count('C'), 'G' => count('G'), 
+      'T' => count('T') 
+    }
   end
 end
 
