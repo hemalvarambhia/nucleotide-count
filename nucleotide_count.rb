@@ -1,14 +1,24 @@
-class Array
-  def histogram
-    { 
-      'A' => count('A'), 'C' => count('C'), 'G' => count('G'), 
-      'T' => count('T') 
-    }
-  end
-end
-
 class Nucleotide
   def self.from_dna sequence
-    sequence.split ''  
+    Sequence.new sequence
+  end
+
+  class Sequence
+    include Enumerable
+  
+    def initialize sequence_string
+      @sequence = sequence_string.split ''
+    end
+
+    def histogram
+      { 
+        'A' => count('A'), 'C' => count('C'), 'G' => count('G'), 
+        'T' => count('T') 
+      }
+    end
+
+    def each
+      @sequence.each { |nucleotide| yield nucleotide }
+    end
   end
 end
