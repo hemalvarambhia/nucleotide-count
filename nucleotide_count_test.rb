@@ -17,7 +17,6 @@ class NucleotideTest < Minitest::Test
   end
 
   def test_counts_a_nucleotide_only_once
-    skip
     dna = Nucleotide.from_dna('CGATTGGG')
     dna.count('T')
     dna.count('T')
